@@ -94,6 +94,7 @@ bool setup(BelaContext *context, void *userData)
     // Initialise auxiliary tasks
 	if((gFillBuffersTask = Bela_createAuxiliaryTask(&fillBuffers, 90, "fill-buffer")) == 0)
 		return false;
+	// here is a demo comment
 
 	return true;
 }
