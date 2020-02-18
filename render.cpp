@@ -94,7 +94,6 @@ bool setup(BelaContext *context, void *userData)
     // Initialise auxiliary tasks
 	if((gFillBuffersTask = Bela_createAuxiliaryTask(&fillBuffers, 90, "fill-buffer")) == 0)
 		return false;
-	// here is a demo comment
 
 	return true;
 }
@@ -153,4 +152,7 @@ void render(BelaContext *context, void *userData)
 
 void cleanup(BelaContext *context, void *userData)
 {
+    for(int i=0;i<NUM_STREAMS;i++) {
+        delete sampleStream[i];
+    }
 }
